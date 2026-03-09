@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  generate_data:
+    build:
+      context: ./generate_data
+      dockerfile: Dockerfile
+    container_name: data_generator
+
+    environment:
+      - OUTPUT_FILE=/app/data/transactions.csv
+      - FILES_TO_GENERATE=100000000
+
+    volumes:
+      - ./data:/app/data
