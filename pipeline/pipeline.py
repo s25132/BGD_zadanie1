@@ -4,7 +4,7 @@ import time
 from sqlalchemy.exc import OperationalError
 import os
 
-CHUNK_SIZE = os.getenv("CHUNK_SIZE", "100000")
+CHUNK_SIZE = os.getenv("CHUNK_SIZE", "10000")
 CSV_FILE = os.getenv("DATA_FILE", "transactions.csv")
 DB_URL = os.getenv("DB_URL", "postgresql+psycopg2://postgres:postgres@localhost:5432/medallion")
 
