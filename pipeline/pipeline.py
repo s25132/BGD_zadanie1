@@ -1,12 +1,27 @@
 import pandas as pd
 from sqlalchemy import create_engine, text
+import time
+from sqlalchemy.exc import OperationalError
 
 CHUNK_SIZE = 100_000
 CSV_FILE = "transactions.csv"
 
-engine = create_engine(
-    "postgresql+psycopg2://postgres:postgres@localhost:5432/medallion"
-)
+DB_URL = "postgresql+psycopg2://postgres:postgres@postgres:5432/medallion"
+
+engine = None
+for i in range(30):  # próbuje przez ~30 sekund
+    try:
+        engine = create_engine(DB_URL)
+        conn = engine.connect()
+        conn.close()
+        print("Połączono z bazą danych")
+        break
+    except OperationalError:
+        print("Czekam na bazę danych...")
+        time.sleep(1)
+
+if engine is None:
+    raise Exception("Nie udało się połączyć z bazą danych")
 
 def load_raw():
     batch_no = 0
