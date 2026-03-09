@@ -2,11 +2,11 @@ import pandas as pd
 from sqlalchemy import create_engine, text
 import time
 from sqlalchemy.exc import OperationalError
+import os
 
-CHUNK_SIZE = 100_000
-CSV_FILE = "transactions.csv"
-
-DB_URL = "postgresql+psycopg2://postgres:postgres@postgres:5432/medallion"
+CHUNK_SIZE = os.getenv("CHUNK_SIZE", "100000")
+CSV_FILE = os.getenv("DATA_FILE", "transactions.csv")
+DB_URL = os.getenv("DB_URL", "postgresql+psycopg2://postgres:postgres@localhost:5432/medallion")
 
 engine = None
 for i in range(30):  # próbuje przez ~30 sekund

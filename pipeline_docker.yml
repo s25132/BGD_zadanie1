@@ -21,6 +21,9 @@ services:
     container_name: pipeline
     environment:
       - DATA_FILE=/app/data/transactions.csv
+      - DB_URL=postgresql+psycopg2://postgres:postgres@postgres:5432/medallion
+      - CHUNK_SIZE=100000
+
     volumes:
       - ./data:/app/data
     depends_on:
