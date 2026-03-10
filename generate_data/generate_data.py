@@ -9,8 +9,8 @@ ROWS = int(os.getenv("FILES_TO_GENERATE", "1000000"))
 first_names = ["Jan", "Anna", "Piotr", "Kasia", "Tomasz", "Maria", "Adam", "Ewa"]
 last_names = ["Nowak", "Kowalski", "Wisniewski", "Wojcik", "Kaczmarek", "Mazur"]
 
-cities = ["Warsaw", "Krakow", "Gdansk", "Wroclaw", "Poznan"]
-countries = ["PL", "DE", "FR", "ES", "IT", "Polska"]
+cities = ["Warszawa", "Kraków", "Gdańsk", "Wrocław", "Poznań"]
+countries = ["PL", "DE", "FR", "ES", "IT"]
 payment_methods = ["card", "blik", "transfer", "cash", "CARD"]
 statuses = ["approved", "declined", "pending", "APPROVED"]
 
