@@ -4,10 +4,14 @@ import time
 from sqlalchemy.exc import OperationalError
 import os
 
-CHUNK_SIZE = os.getenv("CHUNK_SIZE", "10000")
+CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "10000"))
 CSV_FILE = os.getenv("DATA_FILE", "transactions.csv")
 DB_URL = os.getenv("DB_URL", "postgresql+psycopg2://postgres:postgres@localhost:5432/medallion")
 
+
+print(f"Używany plik CSV: {CSV_FILE}"
+      f"\nRozmiar chunku: {CHUNK_SIZE}"
+      f"\nURL bazy danych: {DB_URL}")
 engine = None
 for i in range(30):  # próbuje przez ~30 sekund
     try:
