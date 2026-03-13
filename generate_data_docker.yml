@@ -9,7 +9,7 @@ services:
 
     environment:
       - OUTPUT_FILE=/app/data/transactions.csv
-      - FILES_TO_GENERATE=120000000
+      - FILES_TO_GENERATE=30000000
 
     volumes:
       - ./data:/app/data
