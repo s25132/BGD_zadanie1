@@ -12,85 +12,46 @@ Problemy z danymi:
 ## Skrypt pipline 
 
 Skrypt ma trzy metody:
-RAW – load_raw()
+1. RAW – load_raw()
 
-Cel: przechowywanie surowych danych
+- Wczytuje dane z pliku CSV w partiach (chunkach)
 
-Opis działania
+- Dodaje numer batcha (batch_no)
 
-Wczytuje dane z pliku CSV w partiach (chunkach)
+- Zapisuje dane bez transformacji do tabeli: raw.transactions_raw
 
-Dodaje numer batcha (batch_no)
+### Cel: przechowywanie surowych danych
 
-Zapisuje dane bez transformacji do tabeli:
+2. SILVER – build_silver()
 
-raw.transactions_raw
-Rezultat
+- Pobiera dane z warstwy RAW batchami
 
-Surowe dane gotowe do dalszego przetwarzania
+- Czyści i normalizuje dane
 
-SILVER – build_silver()
+- Wykonuje walidację
 
-Cel: oczyszczone i zwalidowane dane
+- Dodaje kolumny opisujące rezujtat walidacji
 
-Opis działania
+- Zapisuje dane do: silver.transactions_clean
 
-Pobiera dane z warstwy RAW batchami
+### Cel: oczyszczone i zwalidowane dane
 
-Czyści i normalizuje dane:
+3. GOLD – build_gold()
 
-formatowanie tekstów (lower, upper, title)
+Buduje model analityczny (schemat gwiazdy):
 
-konwersja dat (transaction_ts)
+- Tabele wymiarów: gold.dim_customer, gold.dim_merchant, gold.dim_date
 
-konwersja liczb (amount)
+- Tabela faktów: gold.fact_transactions
 
-Walidacja
+Cechy:
 
-brak transaction_id
+- Uwzględnia tylko poprawne dane (is_valid = true)
 
-błędna data
+- Usuwa duplikaty (ON CONFLICT DO NOTHING)
 
-błędna lub ujemna kwota
+### Cel: dane gotowe do analizy i raportowania
 
-Dodane kolumny
-
-is_valid
-
-validation_error
-
-Zapis do
-silver.transactions_clean
-Rezultat
-
-Dane oczyszczone i przygotowane do analizy
-
-GOLD – build_gold()
-
-Cel: dane gotowe do analizy i raportowania
-
-Model danych: schemat gwiazdy
-Tabele wymiarów
-
-gold.dim_customer
-
-gold.dim_merchant
-
-gold.dim_date
-
-Tabela faktów
-
-gold.fact_transactions
-
-Cechy
-
-uwzględnia tylko poprawne dane (is_valid = true)
-
-usuwa duplikaty (ON CONFLICT DO NOTHING)
-
-Rezultat
-
-Model analityczny gotowy do wykorzystania w raportowaniu i systemach BI
 
 ## Uruchomienie
 Generacja danych 
