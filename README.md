@@ -12,7 +12,7 @@ Problemy z danymi:
 ## Skrypt pipline 
 
 Skrypt ma trzy metody:
-### RAW – load_raw() -> przechowywanie surowych danych
+### RAW – load_raw() -> Cel: przechowywanie surowych danych
 
 - Wczytuje dane z pliku CSV w partiach (chunkach)
 
