@@ -48,7 +48,9 @@ Cechy:
 
 - Uwzględnia tylko poprawne dane (is_valid = true)
 
-- Usuwa duplikaty (ON CONFLICT DO NOTHING)
+- Zabezpieczenie przed duplikatami (ON CONFLICT DO NOTHING) 
+
+- Tworzenie widoku dla raportu gold.v_transaction_report
 
 ## Uruchomienie
 Generacja danych 

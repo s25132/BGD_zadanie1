@@ -204,11 +204,32 @@ def build_gold():
             ON CONFLICT (transaction_id) DO NOTHING
         """))
 
+        print("Tworzę widok gold.v_transaction_report...")
+
+        conn.execute(text("""
+            CREATE OR REPLACE VIEW gold.v_transaction_report AS
+            SELECT
+                f.transaction_id,
+                d.year,
+                d.month,
+                d.day,
+                c.customer_name,
+                m.city,
+                m.country,
+                f.amount,
+                f.payment_method,
+                f.status
+            FROM gold.fact_transactions f
+            JOIN gold.dim_customer c ON f.customer_id = c.customer_id
+            JOIN gold.dim_merchant m ON f.merchant_id = m.merchant_id
+            JOIN gold.dim_date d ON f.date_id = d.date_id;
+        """))
+
     print("GOLD gotowe")
 
 
 if __name__ == "__main__":
-    load_raw()
-    build_silver()
+    #load_raw()
+    #build_silver()
     build_gold()
     print("Gotowe")
