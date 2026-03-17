@@ -12,7 +12,11 @@ Problemy z danymi:
 ## Skrypt pipline 
 
 Skrypt ma trzy metody:
-1. RAW – load_raw()
+RAW – load_raw()
+
+Cel: przechowywanie surowych danych
+
+Opis działania
 
 Wczytuje dane z pliku CSV w partiach (chunkach)
 
@@ -21,22 +25,27 @@ Dodaje numer batcha (batch_no)
 Zapisuje dane bez transformacji do tabeli:
 
 raw.transactions_raw
+Rezultat
 
-Cel: przechowywanie surowych danych
+Surowe dane gotowe do dalszego przetwarzania
 
-2. SILVER – build_silver()
+SILVER – build_silver()
+
+Cel: oczyszczone i zwalidowane dane
+
+Opis działania
 
 Pobiera dane z warstwy RAW batchami
 
 Czyści i normalizuje dane:
 
-format tekstów (np. title, lower, upper)
+formatowanie tekstów (lower, upper, title)
 
 konwersja dat (transaction_ts)
 
 konwersja liczb (amount)
 
-Wykonuje walidację:
+Walidacja
 
 brak transaction_id
 
@@ -44,23 +53,24 @@ błędna data
 
 błędna lub ujemna kwota
 
-Dodaje kolumny:
+Dodane kolumny
 
 is_valid
 
 validation_error
 
-Zapisuje dane do:
-
+Zapis do
 silver.transactions_clean
+Rezultat
 
-Cel: oczyszczone i zwalidowane dane
+Dane oczyszczone i przygotowane do analizy
 
-3. GOLD – build_gold()
+GOLD – build_gold()
 
-Buduje model analityczny (schemat gwiazdy):
+Cel: dane gotowe do analizy i raportowania
 
-Tabele wymiarów:
+Model danych: schemat gwiazdy
+Tabele wymiarów
 
 gold.dim_customer
 
@@ -68,18 +78,19 @@ gold.dim_merchant
 
 gold.dim_date
 
-Tabela faktów:
+Tabela faktów
 
 gold.fact_transactions
 
-Cechy:
+Cechy
 
-Uwzględnia tylko poprawne dane (is_valid = true)
+uwzględnia tylko poprawne dane (is_valid = true)
 
-Usuwa duplikaty (ON CONFLICT DO NOTHING)
+usuwa duplikaty (ON CONFLICT DO NOTHING)
 
-Cel: dane gotowe do analizy i raportowania
+Rezultat
 
+Model analityczny gotowy do wykorzystania w raportowaniu i systemach BI
 
 ## Uruchomienie
 Generacja danych 
