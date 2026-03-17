@@ -229,7 +229,7 @@ def build_gold():
 
 
 if __name__ == "__main__":
-    #load_raw()
-    #build_silver()
+    load_raw()
+    build_silver()
     build_gold()
     print("Gotowe")
