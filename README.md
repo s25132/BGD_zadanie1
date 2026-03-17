@@ -1,4 +1,8 @@
 # BGD_zadanie1
+
+## Cel zadania 
+Celem projektu jest zaprojektowanie i implementacja skalowalnego pipeline’u przetwarzania danych transakcyjnych, który przekształca surowe, potencjalnie błędne dane w wysokiej jakości model analityczny (warstwa GOLD), umożliwiający wiarygodne raportowanie i analizę biznesową.
+
 ## Skrypt generate_data 
 
 Generuje sztuczne dane na potrzeby zadania i umieszcza w katalogu data w jednym pliku csv. 
