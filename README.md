@@ -12,7 +12,7 @@ Problemy z danymi:
 ## Skrypt pipline 
 
 Skrypt ma trzy metody:
-1. RAW – load_raw()
+### RAW – load_raw() -> przechowywanie surowych danych
 
 - Wczytuje dane z pliku CSV w partiach (chunkach)
 
@@ -20,9 +20,7 @@ Skrypt ma trzy metody:
 
 - Zapisuje dane bez transformacji do tabeli: raw.transactions_raw
 
-### Cel: przechowywanie surowych danych
-
-2. SILVER – build_silver()
+### SILVER – build_silver() -> Cel: oczyszczone i zwalidowane dane
 
 - Pobiera dane z warstwy RAW batchami
 
@@ -34,9 +32,7 @@ Skrypt ma trzy metody:
 
 - Zapisuje dane do: silver.transactions_clean
 
-### Cel: oczyszczone i zwalidowane dane
-
-3. GOLD – build_gold()
+### GOLD – build_gold() ->  Cel: dane gotowe do analizy i raportowania
 
 Buduje model analityczny (schemat gwiazdy):
 
@@ -49,9 +45,6 @@ Cechy:
 - Uwzględnia tylko poprawne dane (is_valid = true)
 
 - Usuwa duplikaty (ON CONFLICT DO NOTHING)
-
-### Cel: dane gotowe do analizy i raportowania
-
 
 ## Uruchomienie
 Generacja danych 
