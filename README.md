@@ -22,7 +22,7 @@ Skrypt ma trzy metody:
 
 - Dodaje numer batcha (batch_no)
 
-- Zapisuje dane bez transformacji do tabeli: raw.transactions_raw
+- Zapisuje czyste dane do tabeli: raw.transactions_raw
 
 ### SILVER – build_silver() -> Cel: oczyszczone i zwalidowane dane
 
