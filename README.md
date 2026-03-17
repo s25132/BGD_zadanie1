@@ -28,7 +28,7 @@ Skrypt ma trzy metody:
 
 - Wykonuje walidację
 
-- Dodaje kolumny opisujące rezujtat walidacji
+- Dodaje kolumny opisujące rezultat walidacji
 
 - Zapisuje dane do: silver.transactions_clean
 
