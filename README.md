@@ -18,7 +18,7 @@ Dane posidają następujące kolumny
 - status – status transakcji
 
 Do repozytorium GitHub dołączone zostały przykładowe pliki danych (katalog data).
-Pipeline był również testowany na dużym pliku CSV o rozmiarze ~2,5 GB.
+Pipeline był również testowany na dużym pliku CSV o rozmiarze ~2,5 GB (https://drive.google.com/file/d/1uI-XWg8u_DqIr5-i24zRgWTYXB_m1Kfj/view?usp=sharing).
 
 ## Pipeline 
 
