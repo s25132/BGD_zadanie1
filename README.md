@@ -71,8 +71,6 @@ Cechy:
 
 - Zabezpieczenie przed duplikatami (ON CONFLICT DO NOTHING) 
 
-- Tworzenie widoku dla raportu gold.v_transaction_report
-
 - Umożliwia inkrementalne dopisywanie nowych danych do bazy
 
 ## Uruchomienie
