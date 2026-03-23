@@ -106,4 +106,4 @@ FROM pg_catalog.pg_statio_user_tables
 ORDER BY size_gb DESC
 
 ## Architektura
-![GRAPH](BGD_zadanie1.png)
+![GRAPH](BGD_zadanie11.png)
