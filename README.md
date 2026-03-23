@@ -59,6 +59,8 @@ Buduje model analityczny (schemat gwiazdy):
 
 - Tabela faktów: gold.fact_transactions
 
+- Widok: gold.v_transaction_report
+
 ### Pipeline control - pipeline.py
 
 - steruje uruchamianiem wszystkich etapów przetwarzania danych (RAW, SILVER, GOLD).
