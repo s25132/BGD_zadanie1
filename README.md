@@ -19,9 +19,9 @@ status – status transakcji
 Do repozytorium GitHub dołączone zostały przykładowe pliki danych.
 Pipeline był również testowany na dużym pliku CSV o rozmiarze ~2,5 GB.
 
-## Pipline 
+## Pipeline 
 
-Piplime ma cztery moduły
+Pipeline ma cztery moduły
 ###  RAW Ingestion – raw.py-> Cel: przechowywanie surowych danych
 
 - Wczytuje dane z pliku CSV w partiach z katalogu data.
@@ -58,7 +58,7 @@ Buduje model analityczny (schemat gwiazdy):
 
 - Tabela faktów: gold.fact_transactions
 
-### Pipline control - pipeline.py
+### Pipeline control - pipeline.py
 
 - steruje uruchamianiem wszystkich etapów przetwarzania danych (RAW, SILVER, GOLD).
 
