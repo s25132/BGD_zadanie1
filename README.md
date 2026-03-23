@@ -5,18 +5,19 @@ Celem projektu jest zaprojektowanie i implementacja skalowalnego pipeline’u pr
 
 ## Dane
 Dane posidają następujące kolumny 
-transaction_id – unikalny identyfikator transakcji
-customer_id – unikalny identyfikator klienta
-customer_name – imię i nazwisko klienta
-merchant_id – unikalny identyfikator sprzedawcy
-transaction_ts – znacznik czasu wykonania transakcji
-amount – kwota transakcji
-city – miasto, w którym dokonano transakcji
-country – kraj, w którym dokonano transakcji
-payment_method – metoda płatności
-status – status transakcji
 
-Do repozytorium GitHub dołączone zostały przykładowe pliki danych.
+- transaction_id – unikalny identyfikator transakcji
+- customer_id – unikalny identyfikator klienta
+- customer_name – imię i nazwisko klienta
+- merchant_id – unikalny identyfikator sprzedawcy
+- transaction_ts – znacznik czasu wykonania transakcji
+- amount – kwota transakcji
+- city – miasto sprzedawcy
+- country – kraj sprzedawcy
+- payment_method – metoda płatności
+- status – status transakcji
+
+Do repozytorium GitHub dołączone zostały przykładowe pliki danych (katalog data).
 Pipeline był również testowany na dużym pliku CSV o rozmiarze ~2,5 GB.
 
 ## Pipeline 
