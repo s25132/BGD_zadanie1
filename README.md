@@ -72,7 +72,7 @@ docker compose -f show_data.yml build
 docker compose -f show_data.yml up
 
 ## Sql tworzący bazę danych
-BGD_zadanie1/pipeline/init.sql
+BGD_zadanie1/pipeline/db/init.sql
 
 ## Przydatne sql
 SELECT count(1) FROM "raw".transactions_raw

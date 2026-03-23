@@ -66,4 +66,4 @@ with open(OUTPUT_FILE, "w", newline="", encoding="utf-8") as f:
             random.choice(statuses)
         ])
 
-print(f"Wygenerowano plik: {OUTPUT_FILE}")
+print(f"Generated file: {OUTPUT_FILE}")

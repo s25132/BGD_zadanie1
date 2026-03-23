@@ -11,7 +11,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./pipeline/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./pipeline/db/init.sql:/docker-entrypoint-initdb.d/init.sql
       - postgres_data:/var/lib/postgresql/data
 
   pipeline:
@@ -20,7 +20,7 @@ services:
       dockerfile: Dockerfile
     container_name: pipeline
     environment:
-      - DATA_FILE=/app/data/transactions.csv
+      - DATA_FILE=/app/data/transactions_03_23.csv
       - DB_URL=postgresql+psycopg2://postgres:postgres@postgres:5432/medallion
       - CHUNK_SIZE=100000
 

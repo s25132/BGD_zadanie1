@@ -9,6 +9,13 @@ DROP TABLE IF EXISTS gold.dim_customer;
 DROP TABLE IF EXISTS silver.transactions_clean;
 DROP TABLE IF EXISTS raw.transactions_raw;
 
+
+CREATE TABLE IF NOT EXISTS raw.ingestion_log (
+    id SERIAL PRIMARY KEY,
+    file_name TEXT UNIQUE,
+    loaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 CREATE TABLE raw.transactions_raw (
     batch_no INT,
     transaction_id TEXT,
