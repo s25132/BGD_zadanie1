@@ -20,7 +20,7 @@ services:
       dockerfile: Dockerfile
     container_name: pipeline
     environment:
-      - DATA_FILE=/app/data/transactions_03_23.csv
+      - DATA_FILE=/app/data/transactions_03_10.csv
       - DB_URL=postgresql+psycopg2://postgres:postgres@postgres:5432/medallion
       - CHUNK_SIZE=100000
 
