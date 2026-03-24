@@ -20,6 +20,13 @@ Dane posidają następujące kolumny
 Do repozytorium GitHub dołączone zostały przykładowe pliki danych (katalog data).
 Pipeline był również testowany na dużym pliku CSV o rozmiarze ~2,5 GB (https://drive.google.com/file/d/1uI-XWg8u_DqIr5-i24zRgWTYXB_m1Kfj/view?usp=sharing).
 
+Problemy z danymi: 
+- czasami null w kolumnie transaction_id
+- błędna wartośc w kolumnie amount 
+- błędna wartośc w kolumnie transaction_ts 
+- duże i małe wyrazy określające ten sam status statuses = ["approved", "declined", "pending", "APPROVED"] 
+- duże i małe wyrazy określające tą samą metodę płatności payment_methods = ["card", "blik", "transfer", "cash", "CARD"]
+
 ## Pipeline 
 
 Pipeline ma cztery moduły
